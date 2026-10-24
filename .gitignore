@@ -1,0 +1,16 @@
+# generated outputs
+output/
+results/rerun/
+# benchmark games rebuilt locally from the downloaded data (not redistributed)
+results/local/
+# downloaded third-party data (not redistributed)
+data/benchmarks/raw/
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+# LaTeX and editor files
+*.aux
+*.log
+.DS_Store

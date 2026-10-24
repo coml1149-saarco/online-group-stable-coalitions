@@ -1,0 +1,19 @@
+\begin{table}[h]
+\centering\small\setlength{\tabcolsep}{4pt}
+\caption{Coalition-level feedback, default configuration, both utility models pooled, 100 seeds per model (mean $\pm$ standard error over YES instances). The last column is the non-existence error pooled over the NO instances of both grids. \textsc{Random} is identical under both feedback models.}
+\label{tab:bandit-main}
+\begin{tabular}{lccccc}
+\toprule
+& \multicolumn{2}{c}{$T=30$, $\beta=1$} & \multicolumn{2}{c}{$T=1000$, $\beta=3$} & non-existence \\ \cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Algorithm & regret & existence error & regret & existence error & error (NO) \\
+\midrule
+\textsc{UCB-LCB-GS} & 1478\,$\pm$\,79 & 12.1\,$\pm$\,0.7 & 18076\,$\pm$\,2453 & 178.7\,$\pm$\,22.5 & 0.00 \\
+\textsc{Pessimistic-Only} & 2208\,$\pm$\,122 & 14.7\,$\pm$\,0.8 & 44218\,$\pm$\,4044 & 293.8\,$\pm$\,26.5 & 0.00 \\
+\textsc{Optimistic-Only} & 870\,$\pm$\,25 & 5.5\,$\pm$\,0.2 & 7796\,$\pm$\,1122 & 23.1\,$\pm$\,7.4 & 21.73 \\
+\textsc{UCB-Only} & 962\,$\pm$\,35 & 6.1\,$\pm$\,0.2 & 9382\,$\pm$\,1367 & 39.4\,$\pm$\,9.6 & 17.35 \\
+\textsc{LCB-Only} & 958\,$\pm$\,37 & 6.2\,$\pm$\,0.2 & 6258\,$\pm$\,905 & 26.3\,$\pm$\,5.6 & 8.38 \\
+\textsc{Mixed} & 859\,$\pm$\,24 & 5.4\,$\pm$\,0.1 & 7689\,$\pm$\,1205 & 21.8\,$\pm$\,7.8 & 21.88 \\
+\textsc{Random} & 4648\,$\pm$\,56 & 30.0\,$\pm$\,0.0 & 155215\,$\pm$\,1569 & 1000.0\,$\pm$\,0.0 & 0.00 \\
+\bottomrule
+\end{tabular}
+\end{table}

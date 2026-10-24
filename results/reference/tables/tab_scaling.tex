@@ -1,0 +1,27 @@
+\begin{table}[h]
+\centering\small
+\caption{Time of one exact evaluation of ${\gap}_k(\pi,\mathbf v)$ for three partition shapes, and of one call of the partition heuristic (three restarts), measured in a single process on an otherwise idle machine. Utilities are random integers in $[-100,100]$. ``--'': not run because a single evaluation took more than two seconds.}
+\label{tab:scaling}
+\begin{tabular}{rrrrrr}
+\toprule
+$k$ & $n$ & singletons & triples & halves & heuristic call \\
+\midrule
+2 & 6 & 1.8\,ms & 0.7\,ms & 0.7\,ms & 5.2\,ms \\
+2 & 8 & 4.0\,ms & 1.4\,ms & 0.8\,ms & 8.1\,ms \\
+2 & 10 & 6.7\,ms & 2.2\,ms & 1.1\,ms & 15.9\,ms \\
+2 & 12 & 13.9\,ms & 3.4\,ms & 1.6\,ms & 29.3\,ms \\
+2 & 16 & 46.0\,ms & 10.9\,ms & 3.0\,ms & 85.3\,ms \\
+2 & 20 & 114.2\,ms & 23.2\,ms & 4.8\,ms & 200.9\,ms \\
+2 & 24 & 242.1\,ms & 41.9\,ms & 7.2\,ms & 418.2\,ms \\
+2 & 32 & 803.4\,ms & 126.8\,ms & 14.0\,ms & 1.2\,s \\
+3 & 6 & 4.3\,ms & 2.2\,ms & 2.3\,ms & 13.5\,ms \\
+3 & 8 & 32.7\,ms & 11.5\,ms & 6.3\,ms & 83.9\,ms \\
+3 & 10 & 151.7\,ms & 38.7\,ms & 13.6\,ms & 229.9\,ms \\
+3 & 12 & 523.1\,ms & 79.2\,ms & 24.5\,ms & 661.9\,ms \\
+3 & 16 & 3.6\,s & 469.5\,ms & 62.5\,ms & -- \\
+3 & 20 & 15.3\,s & 1.5\,s & 128.0\,ms & -- \\
+3 & 24 & 49.1\,s & 3.7\,s & 232.8\,ms & -- \\
+3 & 32 & 312.2\,s & 20.7\,s & 588.0\,ms & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

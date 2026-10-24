@@ -1,0 +1,79 @@
+{
+ "description": "Parameters of the experiments reported in the paper. The scripts define these values in code (see 'source'); tests/test_config.py checks that this file, config/final_mapping.csv and the code agree.",
+ "seeds": {
+  "count": 100,
+  "values": "0-99",
+  "synthetic": "seed s: environment seed s (utility draw and feedback noise), algorithm seed s + 10000 (restarts, tie-breaking, random partitions); instances are paired across methods",
+  "datasets": "seed s: data points sampled with SHA-256(s || 'bm|<dataset>|<sampler>|n<n>|subset'); environment and algorithm seeds derived from the same tag with '|env' and '|algorithm' (sns/seeding.py)",
+  "source": "scripts/run_grid.py (task), scripts/benchmark_games.py (game)"
+ },
+ "heuristic": {
+  "name": "SOLVE: greedy local search with random restarts, local optima rescored with the exact checker",
+  "restarts_R": 3,
+  "sweeps_M": 60,
+  "random_fallback_coalitions": 4,
+  "deviation_cap": 64,
+  "unseen_pair_radius_B0": 1000.0,
+  "source": "scripts/run_grid.py (OPT), core/algorithms.py (PairwiseEstimator)"
+ },
+ "deviation_checker": "sns/full_deviation_checker.full_gap_k: exact Gap_k over the complete deviation family Lambda_C(pi), |C| <= k <= 3; installed for the learners, the pessimistic test, regret evaluation and labels",
+ "methods": {
+  "semi_bandit": ["ucb_lcb_gs_witness_dev", "pessimistic", "optimistic", "ucb_only", "lcb_only", "mixed", "random"],
+  "coalition_level_bandit": ["bandit_witness", "pessimistic", "optimistic", "ucb_only", "lcb_only", "mixed", "random"],
+  "shared_exploration_control": ["shared_pessimistic", "shared_optimistic", "shared_ucb_only", "shared_lcb_only", "shared_mixed"],
+  "names_in_paper": {"ucb_lcb_gs_witness_dev": "UCB-LCB-GS", "bandit_witness": "UCB-LCB-GS (coalition-level feedback)", "pessimistic": "Pessimistic-Only", "optimistic": "Optimistic-Only", "ucb_only": "UCB-Only", "lcb_only": "LCB-Only", "mixed": "Mixed", "random": "Random"},
+  "not_reported_in_paper": {"ucb_lcb_gs": "original implementation, preserved in the historical trial records (smoke checks only)"}
+ },
+ "synthetic_grid": {
+  "utility_models": {"uniform": "integers uniform in [-100, 100]", "gaussian": "mean uniform in the integers [-100, 100], then N(mean, 10^2), rounded"},
+  "noise": "Gaussian N(0, sigma^2), one draw per co-located pair and round",
+  "default": {"n": 6, "k": 2, "T": 30, "sigma": 3.0, "beta": 1.0, "eps": 1.0},
+  "E1": {"vary_one_at_a_time": {"T": [15, 30, 45, 60], "n": [4, 5, 6, 7], "k": [1, 2, 3], "sigma": [1.0, 3.0, 5.0, 10.0, 20.0], "eps": [0.5, 1.0, 2.0, 5.0, 10.0], "beta": [0.25, 0.5, 1.0, 2.0, 4.0]}},
+  "E2": {"default_beta": 3.0, "vary_one_at_a_time": {"T": [15, 30, 45, 60], "n": [4, 5, 6, 7], "k": [1, 2, 3], "sigma": [1.0, 3.0, 5.0, 10.0, 20.0], "eps": [0.5, 1.0, 2.0, 5.0, 10.0]}},
+  "E3": {"T": [300, 1000], "beta": [1.0, 3.0]},
+  "cells": "config/final_mapping.csv: one row per (experiment, cell, method) with the source of its trials (new/rerun: results/saved/synthetic/trials.jsonl; reuse/preserved: results/saved/synthetic/historical_trials.csv)",
+  "source": "config/final_mapping.csv, scripts/run_grid.py"
+ },
+ "labels": {
+  "rule": "YES if max_pi Gap_k(pi, v) >= eps; NO if max_pi Gap_k(pi, v) < 0; intermediate (Z) otherwise",
+  "synthetic": "exhaustive over all partitions (scripts/compute_exact_labels.py)",
+  "datasets": "exact two-stage filter Gap_1 -> Gap_2, with a full exhaustive cross-check at n = 8 (scripts/benchmark_labels.py)"
+ },
+ "metrics": {
+  "regret": "sum_t max(0, eps - Gap_k(pi_t, v)), averaged over YES instances",
+  "existence_error": "number of rounds with d_t = 0, averaged over YES instances",
+  "non_existence_error": "number of rounds with d_t = 1, averaged over NO instances",
+  "intermediate_declaration_rate": "fraction of rounds with d_t = 1 on intermediate instances (scored by neither error)",
+  "uncertainty": "mean +- standard error over the instances of the class"
+ },
+ "robustness": {
+  "settings": {"asymmetric": "v_ij and v_ji drawn independently with the same marginals; one observation per ordered co-located pair; estimator per ordered pair", "student_t5": "symmetric utilities; Student-t noise with 5 degrees of freedom rescaled to variance sigma^2"},
+  "parameters": {"n": 6, "k": 2, "T": 30, "sigma": 3.0, "beta": 1.0, "eps": 1.0},
+  "source": "scripts/run_grid.py (robust_tasks), sns/environments.py"
+ },
+ "coalition_level_bandit": {
+  "feedback": "each agent i reports R_i = sum_{j in pi(i)\\{i}} v_ij + eta_i, eta_i ~ N(0, sigma^2); pairwise estimates only from two-agent coalitions",
+  "initialization": "round-robin matchings: r = n - 1 (even n) or n (odd n) rounds, every pair once",
+  "grid": "every parameter set of the semi-bandit grid (E1, E2, E3) with 100 seeds; Random reuses its semi-bandit trajectories",
+  "shared_exploration_control": {"n": 6, "k": 2, "sigma": 3.0, "eps": 1.0, "T": [30, 300], "beta": [1.0, 3.0]},
+  "source": "scripts/run_grid.py (bandit_grid_tasks), sns/bandit_algorithms.py"
+ },
+ "datasets": {
+  "construction": "Csaji et al. (NeurIPS 2025): y is a friend of x if d(x, y) <= f * diam, an enemy if d(x, y) > e * diam (and not a friend), neutral otherwise; distances and diameter of the full data set (Euclidean for Iris, shortest-path length for the networks)",
+  "thresholds": {"primary": [0.25, 0.35], "label_sensitivity": [[0.2, 0.2], [0.4, 0.4]]},
+  "encodings": {"AF": "(friend, enemy) = (n, -1)", "AE": "(1, -n)", "B": "(1, -1)", "scale": "utilities multiplied by c = floor(100 / max(|a_f|, |a_e|))"},
+  "configurations": [["iris", "stratified"], ["karate", "stratified"], ["jazz", "uniform"], ["jazz", "snowball"]],
+  "sizes": [8, 10, 12],
+  "learning_parameters": {"T": 30, "k": 2, "sigma": 3.0, "beta": 1.0, "eps": 1.0},
+  "feedback": ["semi", "bandit"],
+  "source": "scripts/benchmark_games.py, scripts/benchmark_labels.py, scripts/run_benchmark.py"
+ },
+ "scalability": {
+  "k": [2, 3],
+  "n": [6, 8, 10, 12, 16, 20, 24, 32],
+  "partition_shapes": ["singletons", "coalitions of size 3", "two halves"],
+  "utilities": "random symmetric integers in [-100, 100], numpy seed 0",
+  "stop_rule": "a size is skipped once a single evaluation exceeds 60 s; SOLVE timed only if every evaluation took under 2 s",
+  "source": "scripts/bench_exact_checker.py"
+ }
+}

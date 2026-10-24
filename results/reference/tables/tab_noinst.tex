@@ -1,0 +1,21 @@
+\begin{table}[h]
+\centering\small\setlength{\tabcolsep}{3pt}
+\caption{Declarations on instances without an $(\varepsilon,k)$-strongly Nash stable partition, pooled over all cells of each grid. ``NO'': mean number of rounds with $d_t=1$ per NO instance (the non-existence error). ``int.'': fraction of rounds with $d_t=1$ on intermediate instances, which neither metric scores. The counts are instance--cell pairs; the same instance appears in several cells.}
+\label{tab:no-instances}
+\begin{tabular}{lcccc}
+\toprule
+& \multicolumn{2}{c}{historical grid} & \multicolumn{2}{c}{$\beta=3$ grid} \\ \cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Algorithm & NO & int. & NO & int. \\
+\midrule
+\textsc{UCB-LCB-GS} & 0.01 & 0.00 & 0.00 & 0.00 \\
+\textsc{Pessimistic-Only} & 0.00 & 0.00 & 0.00 & 0.00 \\
+\textsc{Optimistic-Only} & 19.80 & 0.80 & 25.53 & 0.85 \\
+\textsc{UCB-Only} & 13.16 & 0.57 & 17.55 & 0.61 \\
+\textsc{LCB-Only} & 31.22 & 1.00 & 31.45 & 1.00 \\
+\textsc{Mixed} & 19.99 & 0.80 & 22.97 & 0.84 \\
+\textsc{Random} & 0.00 & 0.00 & 0.00 & 0.00 \\
+\midrule
+instance--cell pairs & 74 & 197 & 62 & 177 \\
+\bottomrule
+\end{tabular}
+\end{table}

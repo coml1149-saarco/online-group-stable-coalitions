@@ -1,0 +1,60 @@
+\begin{table}[p]
+\centering
+\caption{Regret on YES games under semi-bandit feedback ($T=30$, $k=2$, $\sigma=3$, $\beta=1$, $\varepsilon=1$): mean and, in parentheses, standard error over the YES games among the $100$ games of each row; YES gives their number. Abbreviations: \textsc{Pess.}, \textsc{Opt.}, \textsc{UCB-O.} and \textsc{LCB-O.} denote \textsc{Pessimistic-Only}, \textsc{Optimistic-Only}, \textsc{UCB-Only} and \textsc{LCB-Only}.}
+\label{tab:bench-semi-regret}
+\scriptsize\setlength{\tabcolsep}{3pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llrrrrrrrrr}
+\toprule
+dataset & type & $n$ & YES & UCB-LCB-GS & \textsc{Pess.} & \textsc{Opt.} & \textsc{UCB-O.} & \textsc{LCB-O.} & \textsc{Mixed} & \textsc{Random} \\
+\midrule
+Iris & friends & 8 & 97 & 44\,{\scriptsize(5)} & 3,905\,{\scriptsize(134)} & 192\,{\scriptsize(39)} & 240\,{\scriptsize(47)} & 5,790\,{\scriptsize(0)} & 82\,{\scriptsize(17)} & 7,654\,{\scriptsize(107)} \\
+ &  & 10 & 100 & 12\,{\scriptsize(4)} & 4,756\,{\scriptsize(123)} & 32\,{\scriptsize(13)} & 31\,{\scriptsize(13)} & 6,030\,{\scriptsize(0)} & 32\,{\scriptsize(16)} & 9,320\,{\scriptsize(85)} \\
+ &  & 12 & 100 & 20\,{\scriptsize(7)} & 5,838\,{\scriptsize(167)} & 72\,{\scriptsize(27)} & 103\,{\scriptsize(40)} & 5,790\,{\scriptsize(0)} & 60\,{\scriptsize(25)} & 9,850\,{\scriptsize(75)} \\
+\addlinespace[1pt]
+Iris & enemies & 8 & 84 & 536\,{\scriptsize(8)} & 5,180\,{\scriptsize(178)} & 519\,{\scriptsize(7)} & 589\,{\scriptsize(26)} & 750\,{\scriptsize(0)} & 516\,{\scriptsize(6)} & 6,789\,{\scriptsize(49)} \\
+ &  & 10 & 88 & 712\,{\scriptsize(11)} & 7,794\,{\scriptsize(144)} & 671\,{\scriptsize(7)} & 758\,{\scriptsize(37)} & 630\,{\scriptsize(0)} & 674\,{\scriptsize(8)} & 8,438\,{\scriptsize(64)} \\
+ &  & 12 & 91 & 833\,{\scriptsize(9)} & 8,870\,{\scriptsize(154)} & 767\,{\scriptsize(6)} & 998\,{\scriptsize(90)} & 510\,{\scriptsize(0)} & 765\,{\scriptsize(5)} & 9,566\,{\scriptsize(55)} \\
+\addlinespace[1pt]
+Iris & balanced & 8 & 74 & 479\,{\scriptsize(11)} & 5,306\,{\scriptsize(184)} & 480\,{\scriptsize(11)} & 480\,{\scriptsize(11)} & 6,030\,{\scriptsize(0)} & 479\,{\scriptsize(11)} & 10,953\,{\scriptsize(83)} \\
+ &  & 10 & 79 & 554\,{\scriptsize(12)} & 7,091\,{\scriptsize(219)} & 554\,{\scriptsize(12)} & 569\,{\scriptsize(20)} & 6,030\,{\scriptsize(0)} & 554\,{\scriptsize(12)} & 12,786\,{\scriptsize(93)} \\
+ &  & 12 & 70 & 640\,{\scriptsize(12)} & 8,594\,{\scriptsize(309)} & 694\,{\scriptsize(41)} & 710\,{\scriptsize(42)} & 6,030\,{\scriptsize(0)} & 648\,{\scriptsize(14)} & 14,276\,{\scriptsize(84)} \\
+\midrule
+Karate club & friends & 8 & 100 & 108\,{\scriptsize(5)} & 2,365\,{\scriptsize(106)} & 270\,{\scriptsize(35)} & 499\,{\scriptsize(61)} & 3,080\,{\scriptsize(141)} & 258\,{\scriptsize(34)} & 3,922\,{\scriptsize(138)} \\
+ &  & 10 & 100 & 168\,{\scriptsize(10)} & 3,756\,{\scriptsize(151)} & 529\,{\scriptsize(54)} & 814\,{\scriptsize(73)} & 4,139\,{\scriptsize(158)} & 461\,{\scriptsize(45)} & 5,390\,{\scriptsize(148)} \\
+ &  & 12 & 100 & 338\,{\scriptsize(23)} & 4,992\,{\scriptsize(144)} & 1,258\,{\scriptsize(92)} & 1,780\,{\scriptsize(116)} & 4,494\,{\scriptsize(144)} & 1,116\,{\scriptsize(82)} & 5,935\,{\scriptsize(129)} \\
+\addlinespace[1pt]
+Karate club & enemies & 8 & 44 & 679\,{\scriptsize(2)} & 4,103\,{\scriptsize(212)} & 673\,{\scriptsize(0)} & 712\,{\scriptsize(31)} & 400\,{\scriptsize(38)} & 684\,{\scriptsize(11)} & 7,468\,{\scriptsize(58)} \\
+ &  & 10 & 28 & 953\,{\scriptsize(13)} & 7,664\,{\scriptsize(456)} & 983\,{\scriptsize(66)} & 1,201\,{\scriptsize(132)} & 489\,{\scriptsize(37)} & 980\,{\scriptsize(67)} & 9,540\,{\scriptsize(91)} \\
+ &  & 12 & 21 & 1,150\,{\scriptsize(17)} & 9,419\,{\scriptsize(523)} & 1,095\,{\scriptsize(39)} & 2,020\,{\scriptsize(287)} & 453\,{\scriptsize(23)} & 1,109\,{\scriptsize(39)} & 10,907\,{\scriptsize(132)} \\
+\addlinespace[1pt]
+Karate club & balanced & 8 & 44 & 694\,{\scriptsize(9)} & 4,212\,{\scriptsize(187)} & 692\,{\scriptsize(9)} & 742\,{\scriptsize(51)} & 3,160\,{\scriptsize(309)} & 692\,{\scriptsize(9)} & 8,721\,{\scriptsize(130)} \\
+ &  & 10 & 22 & 883\,{\scriptsize(13)} & 5,962\,{\scriptsize(388)} & 883\,{\scriptsize(12)} & 988\,{\scriptsize(106)} & 4,255\,{\scriptsize(427)} & 883\,{\scriptsize(13)} & 10,925\,{\scriptsize(177)} \\
+ &  & 12 & 14 & 1,087\,{\scriptsize(14)} & 7,188\,{\scriptsize(458)} & 1,087\,{\scriptsize(14)} & 1,151\,{\scriptsize(67)} & 4,959\,{\scriptsize(399)} & 1,087\,{\scriptsize(14)} & 12,930\,{\scriptsize(276)} \\
+\midrule
+Jazz, uniform & friends & 8 & 18 & 134\,{\scriptsize(17)} & 4,453\,{\scriptsize(363)} & 584\,{\scriptsize(188)} & 850\,{\scriptsize(246)} & 4,990\,{\scriptsize(313)} & 563\,{\scriptsize(158)} & 5,963\,{\scriptsize(290)} \\
+ &  & 10 & 20 & 240\,{\scriptsize(62)} & 6,040\,{\scriptsize(354)} & 345\,{\scriptsize(128)} & 684\,{\scriptsize(257)} & 5,580\,{\scriptsize(246)} & 320\,{\scriptsize(127)} & 6,978\,{\scriptsize(261)} \\
+ &  & 12 & 20 & 289\,{\scriptsize(42)} & 6,712\,{\scriptsize(335)} & 661\,{\scriptsize(167)} & 1,130\,{\scriptsize(248)} & 5,214\,{\scriptsize(264)} & 693\,{\scriptsize(199)} & 7,442\,{\scriptsize(347)} \\
+\addlinespace[1pt]
+Jazz, uniform & enemies & 8 & 10 & 583\,{\scriptsize(49)} & 4,380\,{\scriptsize(325)} & 448\,{\scriptsize(46)} & 478\,{\scriptsize(42)} & 642\,{\scriptsize(55)} & 448\,{\scriptsize(47)} & 4,255\,{\scriptsize(418)} \\
+ &  & 10 & 13 & 728\,{\scriptsize(83)} & 5,845\,{\scriptsize(621)} & 638\,{\scriptsize(77)} & 709\,{\scriptsize(91)} & 607\,{\scriptsize(23)} & 639\,{\scriptsize(77)} & 5,940\,{\scriptsize(674)} \\
+ &  & 12 & 7 & 814\,{\scriptsize(109)} & 7,127\,{\scriptsize(901)} & 733\,{\scriptsize(126)} & 1,052\,{\scriptsize(314)} & 407\,{\scriptsize(48)} & 731\,{\scriptsize(124)} & 7,206\,{\scriptsize(886)} \\
+\addlinespace[1pt]
+Jazz, uniform & balanced & 8 & 10 & 452\,{\scriptsize(50)} & 3,976\,{\scriptsize(409)} & 472\,{\scriptsize(47)} & 542\,{\scriptsize(67)} & 5,130\,{\scriptsize(458)} & 452\,{\scriptsize(50)} & 7,680\,{\scriptsize(318)} \\
+ &  & 10 & 13 & 602\,{\scriptsize(80)} & 7,016\,{\scriptsize(303)} & 650\,{\scriptsize(96)} & 758\,{\scriptsize(108)} & 5,799\,{\scriptsize(231)} & 625\,{\scriptsize(88)} & 9,038\,{\scriptsize(411)} \\
+ &  & 12 & 6 & 719\,{\scriptsize(126)} & 7,572\,{\scriptsize(827)} & 720\,{\scriptsize(126)} & 770\,{\scriptsize(161)} & 4,530\,{\scriptsize(671)} & 719\,{\scriptsize(126)} & 10,447\,{\scriptsize(478)} \\
+\midrule
+Jazz, snowball & friends & 8 & 100 & 0\,{\scriptsize(0)} & 4,700\,{\scriptsize(144)} & 0\,{\scriptsize(0)} & 0\,{\scriptsize(0)} & 5,790\,{\scriptsize(0)} & 0\,{\scriptsize(0)} & 9,878\,{\scriptsize(103)} \\
+ &  & 10 & 100 & 0\,{\scriptsize(0)} & 6,090\,{\scriptsize(175)} & 0\,{\scriptsize(0)} & 0\,{\scriptsize(0)} & 6,030\,{\scriptsize(0)} & 0\,{\scriptsize(0)} & 11,572\,{\scriptsize(101)} \\
+ &  & 12 & 100 & 0\,{\scriptsize(0)} & 6,538\,{\scriptsize(157)} & 0\,{\scriptsize(0)} & 0\,{\scriptsize(0)} & 5,790\,{\scriptsize(0)} & 0\,{\scriptsize(0)} & 12,184\,{\scriptsize(99)} \\
+\addlinespace[1pt]
+Jazz, snowball & enemies & 8 & 100 & 16\,{\scriptsize(8)} & 991\,{\scriptsize(62)} & 13\,{\scriptsize(6)} & 23\,{\scriptsize(12)} & 750\,{\scriptsize(0)} & 13\,{\scriptsize(6)} & 1,352\,{\scriptsize(43)} \\
+ &  & 10 & 100 & 29\,{\scriptsize(11)} & 1,127\,{\scriptsize(73)} & 22\,{\scriptsize(9)} & 70\,{\scriptsize(50)} & 630\,{\scriptsize(0)} & 20\,{\scriptsize(8)} & 1,354\,{\scriptsize(68)} \\
+ &  & 12 & 100 & 27\,{\scriptsize(14)} & 1,087\,{\scriptsize(76)} & 24\,{\scriptsize(12)} & 21\,{\scriptsize(11)} & 510\,{\scriptsize(0)} & 22\,{\scriptsize(11)} & 1,182\,{\scriptsize(68)} \\
+\addlinespace[1pt]
+Jazz, snowball & balanced & 8 & 99 & 6\,{\scriptsize(3)} & 4,915\,{\scriptsize(151)} & 22\,{\scriptsize(15)} & 22\,{\scriptsize(15)} & 6,030\,{\scriptsize(0)} & 6\,{\scriptsize(3)} & 10,318\,{\scriptsize(104)} \\
+ &  & 10 & 99 & 10\,{\scriptsize(5)} & 6,052\,{\scriptsize(176)} & 26\,{\scriptsize(21)} & 33\,{\scriptsize(22)} & 6,030\,{\scriptsize(0)} & 13\,{\scriptsize(8)} & 11,622\,{\scriptsize(95)} \\
+ &  & 12 & 100 & 18\,{\scriptsize(9)} & 6,788\,{\scriptsize(164)} & 18\,{\scriptsize(9)} & 18\,{\scriptsize(9)} & 6,030\,{\scriptsize(0)} & 18\,{\scriptsize(9)} & 12,719\,{\scriptsize(100)} \\
+\bottomrule
+\end{tabular}}
+\end{table}

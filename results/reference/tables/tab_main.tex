@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\caption{Default configuration ($n=6$, $k=2$, $\sigma=3$, $\varepsilon=1$), both utility models pooled, 100 seeds per model. Regret and existence error are averaged over YES instances (mean $\pm$ standard error). Non-existence error is averaged over the 178 NO instances of the asymmetric-utility robustness study, where false declarations can occur. Lower is better in every column.}
+\label{tab:main}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccccc}
+\toprule
+& \multicolumn{2}{c}{$T=30$, $\beta=1$} & \multicolumn{2}{c}{$T=1000$, $\beta=3$} & non-existence \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Algorithm & regret & existence error & regret & existence error & error (NO) \\
+\midrule
+\textsc{UCB-LCB-GS} & 183\,$\pm$\,9 & 8.1\,$\pm$\,0.8 & 688\,$\pm$\,93 & 144.1\,$\pm$\,20.9 & 0.00 \\
+\textsc{Pessimistic-Only} & 2756\,$\pm$\,97 & 18.1\,$\pm$\,0.6 & 36271\,$\pm$\,3894 & 240.5\,$\pm$\,25.3 & 0.00 \\
+\textsc{Optimistic-Only} & 337\,$\pm$\,37 & 1.2\,$\pm$\,0.2 & 7361\,$\pm$\,1493 & 47.8\,$\pm$\,10.1 & 3.12 \\
+\textsc{UCB-Only} & 568\,$\pm$\,62 & 2.8\,$\pm$\,0.4 & 12661\,$\pm$\,1885 & 85.2\,$\pm$\,13.0 & 1.64 \\
+\textsc{LCB-Only} & 3583\,$\pm$\,63 & 0.0\,$\pm$\,0.0 & 119427\,$\pm$\,2094 & 0.0\,$\pm$\,0.0 & 30.00 \\
+\textsc{Mixed} & 295\,$\pm$\,34 & 0.9\,$\pm$\,0.2 & 6088\,$\pm$\,1520 & 39.3\,$\pm$\,10.2 & 3.15 \\
+\textsc{Random} & 4648\,$\pm$\,56 & 30.0\,$\pm$\,0.0 & 155215\,$\pm$\,1569 & 1000.0\,$\pm$\,0.0 & 0.00 \\
+\bottomrule
+\end{tabular}
+\end{table}

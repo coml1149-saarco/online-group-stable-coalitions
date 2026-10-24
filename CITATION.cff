@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper."
+title: "Online Learning of Group-Stable Coalition Structures: experiment code"
+type: software
+license: MIT
+authors:
+  - family-names: Cohen
+    given-names: Saar
+    affiliation: "Department of Computer Science, University of Oxford"
+    email: saar.cohen@cs.ox.ac.uk
+  - family-names: Wooldridge
+    given-names: Michael
+    affiliation: "Department of Computer Science, University of Oxford"
+    email: michael.wooldridge@cs.ox.ac.uk
+preferred-citation:
+  type: conference-paper
+  title: "Online Learning of Group-Stable Coalition Structures"
+  authors:
+    - family-names: Cohen
+      given-names: Saar
+      affiliation: "Department of Computer Science, University of Oxford"
+    - family-names: Wooldridge
+      given-names: Michael
+      affiliation: "Department of Computer Science, University of Oxford"
+  collection-title: "Advances in Neural Information Processing Systems"
+  conference:
+    name: "40th Conference on Neural Information Processing Systems (NeurIPS 2026)"
+  year: 2026

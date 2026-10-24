@@ -1,0 +1,22 @@
+\begin{table}[h]
+\centering\small\setlength{\tabcolsep}{3.5pt}
+\caption{Coalition-level feedback: baselines with their own exploration and with the shared matching schedule (regret / existence error on YES instances, Uniform model, default configuration). \textsc{UCB-LCB-GS} is shown for reference.}
+\label{tab:bandit-shared}
+\begin{tabular}{lcccc}
+\toprule
+Algorithm & $T=30$, $\beta=1$ & $T=30$, $\beta=3$ & $T=300$, $\beta=1$ & $T=300$, $\beta=3$ \\
+\midrule
+\textsc{UCB-LCB-GS} & 1442 / 11.6 & 1827 / 15.4 & 5631 / 52.0 & 8162 / 78.1 \\
+\textsc{Pessimistic-Only}, own & 2136 / 14.2 & 2964 / 19.6 & 12782 / 84.1 & 17983 / 118.0 \\
+\textsc{Pessimistic-Only}, shared & 1987 / 12.9 & 2668 / 17.4 & 10911 / 69.5 & 15005 / 97.0 \\
+\textsc{Optimistic-Only}, own & 849 / 5.3 & 890 / 5.3 & 1741 / 9.8 & 2633 / 10.6 \\
+\textsc{Optimistic-Only}, shared & 838 / 5.3 & 879 / 5.3 & 1750 / 10.0 & 2233 / 9.9 \\
+\textsc{UCB-Only}, own & 942 / 5.9 & 1005 / 6.1 & 2578 / 14.5 & 3097 / 16.2 \\
+\textsc{UCB-Only}, shared & 941 / 6.0 & 988 / 6.0 & 2482 / 13.9 & 3177 / 15.6 \\
+\textsc{LCB-Only}, own & 1020 / 6.6 & 994 / 6.1 & 2538 / 15.8 & 2714 / 13.9 \\
+\textsc{LCB-Only}, shared & 986 / 6.2 & 967 / 5.9 & 2342 / 14.6 & 2511 / 12.4 \\
+\textsc{Mixed}, own & 856 / 5.4 & 865 / 5.1 & 1357 / 7.3 & 2421 / 9.5 \\
+\textsc{Mixed}, shared & 836 / 5.2 & 860 / 5.2 & 1576 / 8.5 & 2160 / 8.9 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,60 @@
+\begin{table}[p]
+\centering
+\caption{Existence error on YES games under semi-bandit feedback, in rounds out of $30$; layout and abbreviations as in \Cref{tab:bench-semi-regret}.}
+\label{tab:bench-semi-error}
+\scriptsize\setlength{\tabcolsep}{3pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llrrrrrrrrr}
+\toprule
+dataset & type & $n$ & YES & UCB-LCB-GS & \textsc{Pess.} & \textsc{Opt.} & \textsc{UCB-O.} & \textsc{LCB-O.} & \textsc{Mixed} & \textsc{Random} \\
+\midrule
+Iris & friends & 8 & 97 & 2.5\,{\scriptsize(0.5)} & 15.5\,{\scriptsize(0.5)} & 0.6\,{\scriptsize(0.1)} & 0.8\,{\scriptsize(0.2)} & 0.0\,{\scriptsize(0.0)} & 0.2\,{\scriptsize(0.1)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 10 & 100 & 1.4\,{\scriptsize(0.2)} & 15.4\,{\scriptsize(0.4)} & 0.1\,{\scriptsize(0.0)} & 0.1\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 0.1\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 12 & 100 & 2.2\,{\scriptsize(0.5)} & 17.8\,{\scriptsize(0.5)} & 0.2\,{\scriptsize(0.1)} & 0.3\,{\scriptsize(0.1)} & 0.0\,{\scriptsize(0.0)} & 0.1\,{\scriptsize(0.1)} & 30.0\,{\scriptsize(0.0)} \\
+\addlinespace[1pt]
+Iris & enemies & 8 & 84 & 5.4\,{\scriptsize(0.9)} & 22.9\,{\scriptsize(0.8)} & 0.0\,{\scriptsize(0.0)} & 0.3\,{\scriptsize(0.1)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 10 & 88 & 10.1\,{\scriptsize(1.1)} & 27.3\,{\scriptsize(0.4)} & 0.0\,{\scriptsize(0.0)} & 0.3\,{\scriptsize(0.1)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 12 & 91 & 16.5\,{\scriptsize(1.3)} & 27.3\,{\scriptsize(0.5)} & 0.0\,{\scriptsize(0.0)} & 0.7\,{\scriptsize(0.3)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+\addlinespace[1pt]
+Iris & balanced & 8 & 74 & 1.0\,{\scriptsize(0.0)} & 14.5\,{\scriptsize(0.5)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 10 & 79 & 1.0\,{\scriptsize(0.0)} & 16.6\,{\scriptsize(0.5)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 12 & 70 & 1.0\,{\scriptsize(0.0)} & 18.0\,{\scriptsize(0.6)} & 0.1\,{\scriptsize(0.1)} & 0.2\,{\scriptsize(0.1)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+\midrule
+Karate club & friends & 8 & 100 & 2.8\,{\scriptsize(0.2)} & 18.2\,{\scriptsize(0.6)} & 1.5\,{\scriptsize(0.2)} & 3.6\,{\scriptsize(0.4)} & 0.0\,{\scriptsize(0.0)} & 1.4\,{\scriptsize(0.2)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 10 & 100 & 6.7\,{\scriptsize(0.6)} & 21.4\,{\scriptsize(0.6)} & 3.0\,{\scriptsize(0.4)} & 4.7\,{\scriptsize(0.5)} & 0.0\,{\scriptsize(0.0)} & 2.6\,{\scriptsize(0.3)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 12 & 100 & 16.2\,{\scriptsize(0.9)} & 25.4\,{\scriptsize(0.6)} & 6.3\,{\scriptsize(0.5)} & 9.4\,{\scriptsize(0.7)} & 0.0\,{\scriptsize(0.0)} & 5.6\,{\scriptsize(0.5)} & 30.0\,{\scriptsize(0.0)} \\
+\addlinespace[1pt]
+Karate club & enemies & 8 & 44 & 1.9\,{\scriptsize(0.3)} & 16.9\,{\scriptsize(0.9)} & 0.0\,{\scriptsize(0.0)} & 0.2\,{\scriptsize(0.1)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 10 & 28 & 10.0\,{\scriptsize(2.0)} & 24.0\,{\scriptsize(1.4)} & 0.3\,{\scriptsize(0.2)} & 1.0\,{\scriptsize(0.4)} & 0.0\,{\scriptsize(0.0)} & 0.3\,{\scriptsize(0.2)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 12 & 21 & 18.7\,{\scriptsize(2.9)} & 25.5\,{\scriptsize(1.4)} & 0.1\,{\scriptsize(0.1)} & 2.6\,{\scriptsize(0.8)} & 0.0\,{\scriptsize(0.0)} & 0.1\,{\scriptsize(0.1)} & 30.0\,{\scriptsize(0.0)} \\
+\addlinespace[1pt]
+Karate club & balanced & 8 & 44 & 1.0\,{\scriptsize(0.0)} & 14.6\,{\scriptsize(0.7)} & 0.0\,{\scriptsize(0.0)} & 0.1\,{\scriptsize(0.1)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 10 & 22 & 1.0\,{\scriptsize(0.0)} & 16.4\,{\scriptsize(0.9)} & 0.0\,{\scriptsize(0.0)} & 0.3\,{\scriptsize(0.3)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 12 & 14 & 1.0\,{\scriptsize(0.0)} & 16.8\,{\scriptsize(1.1)} & 0.0\,{\scriptsize(0.0)} & 0.1\,{\scriptsize(0.1)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+\midrule
+Jazz, uniform & friends & 8 & 18 & 10.6\,{\scriptsize(2.4)} & 22.5\,{\scriptsize(1.3)} & 2.7\,{\scriptsize(1.1)} & 3.6\,{\scriptsize(1.2)} & 0.0\,{\scriptsize(0.0)} & 2.2\,{\scriptsize(0.8)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 10 & 20 & 14.2\,{\scriptsize(2.8)} & 25.6\,{\scriptsize(1.3)} & 0.8\,{\scriptsize(0.5)} & 2.1\,{\scriptsize(1.0)} & 0.0\,{\scriptsize(0.0)} & 0.7\,{\scriptsize(0.4)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 12 & 20 & 20.4\,{\scriptsize(2.5)} & 27.6\,{\scriptsize(1.1)} & 2.0\,{\scriptsize(0.6)} & 4.0\,{\scriptsize(1.0)} & 0.0\,{\scriptsize(0.0)} & 2.2\,{\scriptsize(0.8)} & 30.0\,{\scriptsize(0.0)} \\
+\addlinespace[1pt]
+Jazz, uniform & enemies & 8 & 10 & 26.8\,{\scriptsize(2.6)} & 29.9\,{\scriptsize(0.1)} & 0.0\,{\scriptsize(0.0)} & 0.2\,{\scriptsize(0.1)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 10 & 13 & 28.7\,{\scriptsize(1.1)} & 30.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 0.3\,{\scriptsize(0.2)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 12 & 7 & 30.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 1.3\,{\scriptsize(0.8)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+\addlinespace[1pt]
+Jazz, uniform & balanced & 8 & 10 & 1.7\,{\scriptsize(0.5)} & 15.6\,{\scriptsize(1.6)} & 0.1\,{\scriptsize(0.1)} & 0.3\,{\scriptsize(0.2)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 10 & 13 & 2.5\,{\scriptsize(0.8)} & 23.5\,{\scriptsize(1.2)} & 0.2\,{\scriptsize(0.1)} & 0.5\,{\scriptsize(0.2)} & 0.0\,{\scriptsize(0.0)} & 0.1\,{\scriptsize(0.1)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 12 & 6 & 2.7\,{\scriptsize(1.2)} & 21.5\,{\scriptsize(2.3)} & 0.0\,{\scriptsize(0.0)} & 0.2\,{\scriptsize(0.2)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+\midrule
+Jazz, snowball & friends & 8 & 100 & 1.0\,{\scriptsize(0.0)} & 14.5\,{\scriptsize(0.5)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 10 & 100 & 1.0\,{\scriptsize(0.0)} & 15.8\,{\scriptsize(0.4)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 12 & 100 & 1.0\,{\scriptsize(0.0)} & 16.1\,{\scriptsize(0.4)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+\addlinespace[1pt]
+Jazz, snowball & enemies & 8 & 100 & 7.0\,{\scriptsize(1.0)} & 21.6\,{\scriptsize(0.8)} & 0.0\,{\scriptsize(0.0)} & 0.1\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 10 & 100 & 9.0\,{\scriptsize(1.1)} & 24.7\,{\scriptsize(0.7)} & 0.0\,{\scriptsize(0.0)} & 0.3\,{\scriptsize(0.3)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 12 & 100 & 15.6\,{\scriptsize(1.2)} & 27.3\,{\scriptsize(0.6)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+\addlinespace[1pt]
+Jazz, snowball & balanced & 8 & 99 & 1.0\,{\scriptsize(0.0)} & 14.5\,{\scriptsize(0.5)} & 0.1\,{\scriptsize(0.0)} & 0.1\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 10 & 99 & 1.0\,{\scriptsize(0.0)} & 15.6\,{\scriptsize(0.4)} & 0.1\,{\scriptsize(0.1)} & 0.1\,{\scriptsize(0.1)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+ &  & 12 & 100 & 1.0\,{\scriptsize(0.0)} & 16.0\,{\scriptsize(0.4)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 0.0\,{\scriptsize(0.0)} & 30.0\,{\scriptsize(0.0)} \\
+\bottomrule
+\end{tabular}}
+\end{table}
